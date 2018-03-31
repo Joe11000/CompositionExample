@@ -7,7 +7,7 @@ class House
     args = default_params.merge args
 
     @items = args.fetch(:order).order(args[:items])
-    @format = args.fetch(:format).format(args[:items])
+    @format = args.fetch(:format).format(items)
   end
 
   private
@@ -75,7 +75,7 @@ class StringFormatter
   include Interfaces::Formatable
 
   def format items
-    items.join(', ')
+    puts items.join(', ')
   end
 end
 
